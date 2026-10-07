@@ -1,17 +1,29 @@
-import java.util.Scanner;
+public class Main {
 
-public class Mainn
-{
-    public static void main(String[] args)
+    public static void main(String[] args) {
+        String[] gyumik={"alma","korte","szolo"};
+
+    // System.out.println(Arrays.toString(gyumik));
+
+    for(int i = 0; i < gyumik.length; i++)
     {
-        Scanner be = new Scanner(System.in);
+        System.out.println(gyumik[i]);
+    }
 
-        System.out.print("Add meg a négyzet oldalának hosszát: ");
-        int oldal = be.nextInt();
 
-        negyzet negyzet = new negyzet(oldal);
+    for(String elem :gyumik)
+    {
+        System.out.println(elem);
+    }
 
-        System.out.println("A négyzet kerülete: " + negyzet.kerulet());
-        System.out.println("A négyzet területe: " + negyzet.terulet());
+    String[] masik = gyumik.clone();
+
+    masik[0]="szilva";
+
+    for(String elem : gyumik)
+    {
+        System.out.println(elem);
+    }
+
     }
 }
