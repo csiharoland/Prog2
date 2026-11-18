@@ -1,21 +1,30 @@
-import java.util.List;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
-public class Main
-{
-    public static void main(String[] args)
-    {
-        // Példa
-        String fname = "input.txt";
-        List<Integer> digits = FileUtils.readFirstLineAsDigits(fname);
-        System.out.println(digits);    // [4, 3, 7, 8, 5]
+public class Main {
+    public static void main(String[] args) throws IOException {
+        // A) rész tesztelése
+        System.out.println("apa: " + StringUtils.isPalindrome("apa"));       // true
+        System.out.println("level: " + StringUtils.isPalindrome("level"));   // true
+        System.out.println("alma: " + StringUtils.isPalindrome("alma"));     // false
 
-        // Konkrét feladat: a day01.txt számjegyeinek összege
-        List<Integer> dayDigits = FileUtils.readFirstLineAsDigits("day01.txt");
-        int sum = 0;
-        for (int d : dayDigits) {
-            sum += d;
+        // B) rész: palindróm szavak megszámolása
+        int count = 0;
+        try (BufferedReader br = Files.newBufferedReader(Path.of("words_alpha.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String word = line.trim();   // a file Windows-os (\r\n) sorvégeket használ
+                if (!word.isEmpty() && StringUtils.isPalindrome(word)) {
+                    count++;
+                }
+            }
         }
-        System.out.println("Számjegyek száma: " + dayDigits.size());
-        System.out.println("Számjegyek összege: " + sum);
+        System.out.println("Palindróm szavak száma: " + count);
+
+        // Extra: az eredmény palindróm-e?
+        boolean extra = StringUtils.isPalindrome(String.valueOf(count));
+        System.out.println("Az eredmény palindróm? " + extra);
     }
 }
