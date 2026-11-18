@@ -1,29 +1,21 @@
-public class Main {
+import java.util.List;
 
-    public static void main(String[] args) {
-        String[] gyumik={"alma","korte","szolo"};
-
-    // System.out.println(Arrays.toString(gyumik));
-
-    for(int i = 0; i < gyumik.length; i++)
+public class Main
+{
+    public static void main(String[] args)
     {
-        System.out.println(gyumik[i]);
-    }
+        // Példa
+        String fname = "input.txt";
+        List<Integer> digits = FileUtils.readFirstLineAsDigits(fname);
+        System.out.println(digits);    // [4, 3, 7, 8, 5]
 
-
-    for(String elem :gyumik)
-    {
-        System.out.println(elem);
-    }
-
-    String[] masik = gyumik.clone();
-
-    masik[0]="szilva";
-
-    for(String elem : gyumik)
-    {
-        System.out.println(elem);
-    }
-
+        // Konkrét feladat: a day01.txt számjegyeinek összege
+        List<Integer> dayDigits = FileUtils.readFirstLineAsDigits("day01.txt");
+        int sum = 0;
+        for (int d : dayDigits) {
+            sum += d;
+        }
+        System.out.println("Számjegyek száma: " + dayDigits.size());
+        System.out.println("Számjegyek összege: " + sum);
     }
 }
