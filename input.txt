@@ -1,1 +1,23 @@
-43785
+Kovács Anna; 5
+Nagy Péter; 4
+Szabó Eszter; 3
+Kovács Anna; 4
+Tóth Gábor; 5
+Nagy Péter; 2
+Szabó Eszter; 5
+Kovács Anna; 5
+Tóth Gábor; 4
+Horváth Eszter; 5
+Horváth Eszter; 4
+Horváth Eszter; 5
+Kiss Máté; 2
+Kiss Máté; 3
+Kiss Máté; 1
+Varga Lili; 5
+Varga Lili; 5
+Varga Lili; 4
+Fekete Dániel; 3
+Fekete Dániel; 3
+Németh Zsófia; 4
+Németh Zsófia; 5
+Németh Zsófia; 4
